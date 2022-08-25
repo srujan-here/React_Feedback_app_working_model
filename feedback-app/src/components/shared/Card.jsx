@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {FaTimes} from 'react-icons/fa'
 function Card({children,reverse}) {
+ 
   return (
     <div className={`card ${reverse && 'reverse'}`}>
-    <div className="num-display">{children.rating}</div>
-    <div className="text-display">{children.text}</div>
+    {children}
+    
     </div>
   )
 }
