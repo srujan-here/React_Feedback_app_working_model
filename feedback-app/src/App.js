@@ -35,7 +35,7 @@ function App() {
          <Feedbackform handleadd={addfeedback} />
       <FeedbackStats feedback={feedback} />
       <FeedbackList feed={feedback} handldelete={deletefeedback} />
-      <AboutIconlink />
+      
 
         </>
       }>
@@ -44,7 +44,9 @@ function App() {
       </Route>
       <Route path="/about" element={<About />} />
       </Routes>
+      
     </div>
+    <AboutIconlink />
     </Router>
 
   
