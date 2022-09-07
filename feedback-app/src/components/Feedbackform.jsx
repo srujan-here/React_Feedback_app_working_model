@@ -40,7 +40,7 @@ function Feedbackform({ handleadd }) {
       <Card reverse={false}>
         <form onSubmit={cliclhandle}>
           <h2>How Would u rate our Services?</h2>
-          <RatingSelect />
+          <RatingSelect select={setrating} selected={rating}/>
           <div class="input-group">
             <input
               type="text"
