@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 
 const FeedbackContext = createContext();
 
+
+
 export const FeedbackProvider = ({ children }) => {
   const [feedback, setfeedback] = useState([
     {
@@ -23,6 +25,13 @@ export const FeedbackProvider = ({ children }) => {
       },
   ])
 
+  const [feedbackedit,setfeedbackedit]= useState(
+    {
+      item:{},
+      edit:false
+    }
+  )
+
   const deletefeedback = (id) => {
     if (window.confirm("Are you sure you want to delete")) {
       setfeedback(feedback.filter((item) => item.id !== id));
@@ -34,9 +43,19 @@ export const FeedbackProvider = ({ children }) => {
     setfeedback([item,...feedback]);
   };
 
+    
+  const editfeedback = (item) => {
+   setfeedbackedit({
+    item,
+    edit: true,
+   })
+  }
+
+  
+
 
   return (
-    <FeedbackContext.Provider value={{feedback,deletefeedback,addfeedback,}}>
+    <FeedbackContext.Provider value={{feedback,deletefeedback,addfeedback,editfeedback}}>
     {children}
     </FeedbackContext.Provider>
   );
